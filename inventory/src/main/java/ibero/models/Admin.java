@@ -1,5 +1,3 @@
 package ibero.models;
 
-public class Admin {
-
-}
+public class Admin {}

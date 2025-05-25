@@ -1,11 +1,7 @@
 package ibero.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class User {
-    private String name, id, password, email, phone;
-    private List<List<Product>> purchaseHistory;
+    protected String name, id, password, email, phone;
 
     public User(String name, String id, String password, String email, String phone) {
         this.name = name;
@@ -13,7 +9,6 @@ public class User {
         this.password = password;
         this.email = email;
         this.phone = phone;
-        this.purchaseHistory = new ArrayList<>();
     }
 
     //@formatter:off
@@ -32,18 +27,4 @@ public class User {
     public String getPhone() { return phone;}
     public void setPhone(String phone) { this.phone = phone;}
     //@formatter:on
-    public List<List<Product>> getPurchaseHistory() {
-        return purchaseHistory;
-    }
-
-    public void addPurchase(List<Product> purchasedItems) {
-        purchaseHistory.add(new ArrayList<>(purchasedItems));
-    }
-
-    public void showPurchaseHistory() {
-        System.out.println("Historial de compras de " + name + ":");
-        for (int i = 0; i < purchaseHistory.size(); i++) {
-            System.out.println("Compra #" + (i + 1) + ": " + purchaseHistory.get(i));
-        }
-    }
 }
