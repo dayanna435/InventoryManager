@@ -23,7 +23,7 @@ public class Store {
 
     private Product createProduct(Category category, String model, double price, int stockQuantity, String imagePath) {
         String fullPath = getClass().getResource(imagePath) != null ? getClass().getResource(imagePath).toString() : "";
-        return new Product(category, model, price, stockQuantity, fullPath);
+        return new Product(category, model, price, stockQuantity, 0, fullPath);
     }
 
     public List<Product> getProducts() { return products; }
