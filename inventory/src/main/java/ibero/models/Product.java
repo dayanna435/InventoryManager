@@ -9,17 +9,15 @@ public class Product {
     private double price;
     private int stockQuantity, cartQuantity;
 
-    public Product(Category category, String model, String imgPath, double price, int stockQuantity, int cartQuantity) {
+    public Product(Category category, String model, double price, int stockQuantity, int cartQuantity,
+            String fullPath) {
         this.category = category;
         this.model = model;
-        this.imgPath = imgPath;
         this.price = price;
         this.stockQuantity = stockQuantity;
         this.cartQuantity = cartQuantity;
-        this.img = new Image(imgPath);
+        this.img = new Image(fullPath);
     }
-
-    public Product(Category category2, String model2, double price2, int stockQuantity2, String fullPath) {
 
     public Category getCategory() { return category; }
 

@@ -19,7 +19,6 @@ import ibero.services.Store;
 import ibero.models.Admin;
 import ibero.models.Client;
 import ibero.models.Product;
-import ibero.models.Brand;
 import ibero.models.Category;
 import ibero.services.Store;
 import ibero.services.Cart;
@@ -30,6 +29,4 @@ public class HomeController {
     private User user;
     private Stage stage;
 
-    @FXML
-    private void switchToSecondary() throws IOException { App.setRoot("secondary"); }
 }
