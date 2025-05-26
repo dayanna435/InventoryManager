@@ -74,4 +74,16 @@
 
 ## Historia de Usuario #5 - Eliminación de productos
 
-**Como** administrador, **quiero** poder eliminar productos que ya no estén en uso **para** conservar un inventario limpio
+*Como* administrador, *quiero* poder eliminar productos que ya no estén en uso *para* conservar un inventario limpio y actualizado.
+
+### Criterios de aceptación:
+- El sistema debe pedir confirmación antes de eliminar un producto.
+- Solo los usuarios administradores podrán eliminar productos.
+
+### Prioridad:
+Alta
+
+### Notas adicionales:
+- Contemplar una opción de desactivar productos en lugar de eliminarlos, permitiendo mantener el historial sin que estén visibles para los usuarios.
+- Impedir la eliminación de productos vinculados a ventas registradas.
+- Registrar la fecha y motivo de eliminación para auditoría futura.
