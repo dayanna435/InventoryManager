@@ -7,29 +7,31 @@ import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.lang.ModuleLayer.Controller;
+import ibero.controllers.FXMLController;
 
 public class App extends Application {
-    // @Override
-    // public void start(Stage stage) throws IOException {
-    // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main.fxml"));
-    // Parent root = loader.load();
+    @Override
+    public void start(Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ibero/views/MainView.fxml"));
+            Parent root = loader.load();
 
-    // Controller controller = loader.getController();
-    // controller.setStage(primaryStage);
+            FXMLController controller = loader.getController();
+            controller.setStage(stage);
 
-    // primaryStage.setTitle("Inventory Manager");
-    // primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("resources/icon.png")));
-    // primaryStage.show();
-    // }
+            stage.setTitle("Inventory Manager");
+            String iconPath = "/ibero/icons/icon.png";
+            if (getClass().getResource(iconPath) != null) {
+                stage.getIcons().add(new Image(getClass().getResourceAsStream(iconPath)));
+            }
 
-    // public static void setRoot(String fxml) throws IOException { scene.setRoot(loadFXML(fxml)); }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("Error to load: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
-    public static void main(String[] args) { launch(); }
-
+    public static void main(String[] args) { launch(args); }
 }
