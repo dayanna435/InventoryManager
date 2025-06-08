@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
+
 import ibero.controllers.FXMLController;
 
 public class App extends Application {
@@ -17,7 +18,6 @@ public class App extends Application {
             Parent root = loader.load();
 
             FXMLController controller = loader.getController();
-            controller.setStage(stage);
 
             stage.setTitle("Inventory Manager");
             String iconPath = "/ibero/icons/icon.png";
@@ -33,5 +33,7 @@ public class App extends Application {
         }
     }
 
-    public static void main(String[] args) { launch(args); }
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
